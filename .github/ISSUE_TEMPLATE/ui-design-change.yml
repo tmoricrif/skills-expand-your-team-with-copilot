@@ -1,0 +1,102 @@
+name: UI/Design Change
+description: Request changes to how the website looks or feels
+title: "[UI Change]: "
+labels: ["enhancement", "ui"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Request a Visual or Design Change
+        Use this form to request changes to colors, layout, fonts, or how things appear on the website.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of the website?
+      description: Where should the change be made?
+      options:
+        - Header/Title area
+        - Activities list
+        - Filters/Search
+        - Activity cards
+        - Sign-up form
+        - Login form
+        - Mascots section
+        - Overall page layout
+        - Footer
+        - Colors/Theme
+        - Other (describe below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-look
+    attributes:
+      label: How does it look now?
+      description: Describe the current appearance
+      placeholder: "Example: The activity cards have a white background and small text"
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-look
+    attributes:
+      label: How should it look instead?
+      description: Describe what you want it to look like
+      placeholder: "Example: The activity cards should have a light blue background and larger text"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: What type of change?
+      description: Select all that apply
+      multiple: true
+      options:
+        - Colors
+        - Text size or font
+        - Layout/positioning
+        - Spacing
+        - Button appearance
+        - Image or icon
+        - Animation or effect
+        - Responsive design (mobile/tablet)
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why is this change needed?
+      description: Explain the purpose of this change
+      placeholder: "Example: Students have trouble reading the current text size on their phones"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-details
+    attributes:
+      label: Additional Details
+      description: Any specific colors, sizes, or examples to reference?
+      placeholder: "Example: Use the school colors (blue #1e40af and gold #fbbf24)"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Acceptance Criteria
+        - The visual change should be implemented as described
+        - The change should work on different screen sizes (desktop, tablet, mobile)
+        - The change should not break the layout or make text unreadable
+        - All interactive elements should remain functional
+        
+        ### Implementation Hints
+        - CSS changes go in `src/static/styles.css`
+        - HTML structure changes go in `src/static/index.html`
+        - Test on different screen sizes using browser developer tools
+        - Use existing CSS classes when possible for consistency
+        - Consider accessibility (color contrast, font size)
+        - Make minimal changes to achieve the desired result
