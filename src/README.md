@@ -4,8 +4,28 @@ A super simple website application that allows students to view and sign up for 
 
 ## Features
 
+### For Students
 - View all available extracurricular activities
-- Sign up for activities
+- Search for activities by name or description
+- Filter activities by:
+  - Category (Sports, Arts, Academic, Community, Technology)
+  - Day of the week (Monday through Sunday)
+  - Time of day (Before School, After School, Weekend)
+- View activity details including schedule and participant count
+- Browse school mascots
+
+### For Teachers
+- Secure login system for teachers and staff
+- Register students for activities
+- Unregister students from activities
+- Manage activity participation
+
+## Technical Stack
+
+- **Backend**: Python with FastAPI
+- **Database**: MongoDB
+- **Frontend**: HTML, CSS, and JavaScript
+- **Authentication**: Password hashing with Argon2
 
 ## Development Guide
 
