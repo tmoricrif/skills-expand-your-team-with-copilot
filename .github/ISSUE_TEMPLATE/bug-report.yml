@@ -1,0 +1,107 @@
+name: Bug Report
+description: Report a problem with the system
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Report a Problem
+        Help us fix issues by providing clear details about what's going wrong.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What's not working?
+      description: Describe the problem in simple terms
+      placeholder: "Example: When I try to sign up a student for Chess Club, nothing happens"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: What should happen instead?
+      description: Describe what you expected to happen
+      placeholder: "Example: The student should be added to the Chess Club participant list"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: How to see the problem
+      description: List the steps to make the problem happen
+      placeholder: |
+        1. Go to the activities page
+        2. Click on Chess Club
+        3. Enter a student email
+        4. Click the sign-up button
+        5. See the error...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where is the problem?
+      description: Which part of the system has the issue?
+      options:
+        - Activities page (viewing activities)
+        - Student sign-up
+        - Login system
+        - Filters (search, day, time)
+        - Activity details display
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-message
+    attributes:
+      label: Error Message
+      description: If you see an error message, copy it here
+      placeholder: Paste any error messages you see
+    validations:
+      required: false
+
+  - type: dropdown
+    id: how-often
+    attributes:
+      label: How often does this happen?
+      description: Is this problem consistent?
+      options:
+        - Always
+        - Sometimes
+        - Only once
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Anything else?
+      description: Add any other helpful information
+      placeholder: Screenshots, specific student emails, activity names, etc.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Acceptance Criteria
+        - The bug should be reproducible based on the steps provided
+        - The fix should resolve the issue without breaking other features
+        - The fix should be tested to ensure it works correctly
+        
+        ### Investigation Hints
+        - Check browser console for JavaScript errors (if UI issue)
+        - Check server logs for Python errors (if backend issue)
+        - Verify the database contains the expected data
+        - Test with different data to isolate the problem
+        - Look for related code in the appropriate files:
+          - UI issues: `src/static/app.js`, `src/static/index.html`, `src/static/styles.css`
+          - Backend issues: `src/backend/routers/`, `src/app.py`
+          - Database issues: `src/backend/database.py`

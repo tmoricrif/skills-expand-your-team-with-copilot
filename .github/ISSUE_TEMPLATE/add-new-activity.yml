@@ -1,0 +1,97 @@
+name: Add New Activity
+description: Request to add a new extracurricular activity to the system
+title: "[New Activity]: "
+labels: ["enhancement", "activity"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Add a New Extracurricular Activity
+        Please fill out all required fields below. This will help us quickly add the new activity to the system.
+
+  - type: input
+    id: activity-name
+    attributes:
+      label: Activity Name
+      description: What is the name of the new activity?
+      placeholder: e.g., "Yoga Club", "Science Fair Prep"
+    validations:
+      required: true
+
+  - type: textarea
+    id: activity-description
+    attributes:
+      label: Activity Description
+      description: Provide a brief description of the activity
+      placeholder: Describe what students will do in this activity
+    validations:
+      required: true
+
+  - type: dropdown
+    id: activity-days
+    attributes:
+      label: Meeting Days
+      description: Which day(s) of the week will this activity meet?
+      multiple: true
+      options:
+        - Monday
+        - Tuesday
+        - Wednesday
+        - Thursday
+        - Friday
+        - Saturday
+        - Sunday
+    validations:
+      required: true
+
+  - type: input
+    id: start-time
+    attributes:
+      label: Start Time
+      description: What time does the activity start? (Use 24-hour format)
+      placeholder: "e.g., 15:30 for 3:30 PM, 07:00 for 7:00 AM"
+    validations:
+      required: true
+
+  - type: input
+    id: end-time
+    attributes:
+      label: End Time
+      description: What time does the activity end? (Use 24-hour format)
+      placeholder: "e.g., 17:00 for 5:00 PM, 08:30 for 8:30 AM"
+    validations:
+      required: true
+
+  - type: input
+    id: max-participants
+    attributes:
+      label: Maximum Participants
+      description: How many students can participate in this activity?
+      placeholder: "e.g., 20"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Any other details we should know about this activity?
+      placeholder: Special equipment needed, location, teacher contact, etc.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Acceptance Criteria
+        - The new activity should appear in the activities list on the website
+        - Students should be able to sign up for the activity
+        - The activity should have the correct schedule and participant limit
+        - The activity should be filterable by day and time
+        
+        ### Implementation Hints
+        - Add the activity to the `initial_activities` dictionary in `src/backend/database.py`
+        - Use the same format as existing activities
+        - Include both `schedule` (human-readable) and `schedule_details` (structured data)
+        - Start with an empty `participants` list
